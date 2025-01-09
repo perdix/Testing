@@ -29,3 +29,34 @@ jobs:
 
       - name: Run tests
         run: mvn test
+
+  checkstyle:
+    name: Run Checkstyle
+    runs-on: ubuntu-latest
+
+    steps:
+      # Code aus dem Repository auschecken
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Java-Umgebung einrichten
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '22'
+          distribution: 'temurin'
+
+      # Abhängigkeiten installieren
+      - name: Install dependencies
+        run: mvn install
+
+      # Checkstyle ausführen
+      - name: Run Checkstyle
+        run: mvn checkstyle:check
+
+      # Optional: Checkstyle-HTML-Bericht hochladen
+      - name: Upload Checkstyle Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: checkstyle-report
+          path: target/site/checkstyle.html
