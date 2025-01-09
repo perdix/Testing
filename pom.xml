@@ -35,7 +35,6 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.6.0</version>
                 <configuration>
-                    <configLocation>checkstyle.xml</configLocation> <!-- Optional, falls du eine eigene Checkstyle-Konfiguration hast -->
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError> <!-- Fehlertests schlagen fehl, wenn Checkstyle Probleme findet -->
                 </configuration>
