@@ -1,4 +1,4 @@
-name: Java CI with Tests and Code Scanning
+name: Java CI
 
 on:
   # Trigger bei jedem Push und Pull Request
